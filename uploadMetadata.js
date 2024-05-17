@@ -18,7 +18,7 @@ const ipfs = create({
     },
 });
 
-async function uploadImage(filePath) {
+async function uploadMetadata(filePath) {
     try {
         const file = fs.readFileSync(filePath);
         const added = await ipfs.add(file);
@@ -29,5 +29,5 @@ async function uploadImage(filePath) {
     }
 }
 
-const imagePath = path.join(__dirname, 'images/2.png');
-uploadImage(imagePath).then((hash) => console.log(`Image uploaded: ${hash}`));
+const metadataPath = path.join(__dirname, 'metadata.json');
+uploadMetadata(metadataPath).then((hash) => console.log(`Metadata uploaded: ${hash}`));

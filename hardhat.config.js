@@ -9,7 +9,7 @@ module.exports = {
       url: "http://127.0.0.1:8545/",
     },
     shm: {
-      url: "https://hackathon.shardeum.org/",
+      url: "https://sphinx.shardeum.org/",
       accounts: [`0x${process.env.PRIVATE_KEY}`],
       gas: 20000000,
     },

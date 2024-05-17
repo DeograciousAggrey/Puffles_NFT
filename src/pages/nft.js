@@ -670,19 +670,22 @@ const MintNFT = () => {
             "type": "function"
           }
         ];
+
+
+
         const imageURI =
-          "ipfs://QmcxhRwKmYcaDrsh7bM7rKE9118PP9DbhcfSUAm6xn68uT";
+          "ipfs://QmcdzPqCtVVP6Ap3HBf32HhEXMpJwgzneyayGaXc9Z6EKJ";
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         await console.log(signer.getAddress());
         const contractNFT = new ethers.Contract(
-          `0x00BdeF4Db81Ca5d666d3B892Fb9E062334707633`,
+          `0x82bE44F1135F3D3347AA44245fF15df831AC4225`,
           NFTMinter,
           signer
         );
 
         let overrides = {
-          value: ethers.utils.parseEther("1"), // Cost to mint: 1 SHM
+          value: ethers.utils.parseEther("0.01"), // Cost to mint: 1 SHM
           gasLimit: 3000000,
         };
         const transaction = await contractNFT.mintNFT(
@@ -698,10 +701,10 @@ const MintNFT = () => {
             <span>
               Minting completed! Transaction hash:
               <Link
-                href={`https://explorer-hackathon.shardeum.org/transaction/${transaction.hash}`}
+                href={`https://explorer-hackathon.sphinx.org/transaction/${transaction.hash}`}
                 target="_blank"
               >
-                {`https://explorer-hackathon.shardeum.org/transaction/${transaction.hash}`}
+                {`https://explorer-hackathon.sphinx.org/transaction/${transaction.hash}`}
               </Link>
             </span>
           ),
