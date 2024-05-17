@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('dotenv').config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     },
     shm: {
       url: "https://hackathon.shardeum.org/",
-      accounts: ["pk"],
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
       gas: 20000000,
     },
   },

@@ -72,9 +72,9 @@ const WalletHeader = () => {
             </Link>
             <nav style={{ display: 'flex', gap: '20px' }}>
             <Link href="/" style={{ color: router.pathname === '/' ? '#A4FF00' : 'white', cursor: 'pointer' }}>Home</Link>
-            <Link href="/rpc" style={{ color: router.pathname === '/rpc' ? '#A4FF00' : 'white', cursor: 'pointer' }}>RPC</Link>
+            <Link href="/nft" style={{ color: router.pathname === '/nft' ? '#A4FF00' : 'white', cursor: 'pointer' }}></Link>
             <Link href="/nft" style={{ color: router.pathname === '/nft' ? '#A4FF00' : 'white', cursor: 'pointer'  }}>NFT</Link>
-            <Link href="/defi" style={{ color: router.pathname === '/defi' ? '#A4FF00' : 'white', cursor: 'pointer'  }}> DeFi  </Link>  
+            <Link href="/nft" style={{ color: router.pathname === '/nft' ? '#A4FF00' : 'white', cursor: 'pointer'  }}>  </Link>  
             </nav>
             {connected ? (
                 <Space direction="horizontal" align="center">
