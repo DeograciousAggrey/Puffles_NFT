@@ -44,6 +44,6 @@
     "typescript": "^5.3.3"
   },
   "bin": {
-    "shardeum-dapp-boilerplate": "./src/pages/index.js"
+    "aggrey-dapp-boilerplate": "./src/pages/index.js"
   }
 }
