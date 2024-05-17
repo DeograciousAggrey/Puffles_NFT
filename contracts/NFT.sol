@@ -5,24 +5,34 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 contract NFTMinter is ERC721URIStorage {
-    uint256 private _tokenIds; // Initialize token ID counter
+    uint256 public constant MAX_NFT_SUPPLY = 10;
+    uint256 public constant MINT_PRICE = 0.01 ether;
+    uint256 public constant MAX_PER_WALLET = 2;
+    uint256 private _tokenIds;
+    string private _baseTokenURI;
 
-    // Set the price for minting an NFT
-    uint256 public mintPrice = 1 ether;
+    mapping (address => uint256) public walletmints;
 
-    constructor() ERC721("Shardeum Dev NFTMinter", "SNFT") {}
+    constructor(string memory baseURI) ERC721("PuffleNFT", "PUFFLE") {
+        _baseTokenURI = baseURI;
+    }
 
-    function mintNFT(address recipient, string memory tokenURI) external payable returns (uint256) {
-        // Ensure exactly 1 Ether is sent
-        require(msg.value == mintPrice, "You must send exactly 1 SHM to mint an NFT");
+    function mintNFT(string memory tokenURI) external payabale {
+        require(_tokenIds < MAX_NFT_SUPPLY, "All NFTs have been minted");
+        require(msg.value == MINT_PRICE, "Incorrect mint price");
+        require(walletmints[msg.sender] < MAX_PER_WALLET, "Max NFT per wallet reached");
 
-        _tokenIds++; // Increment the token ID
+        walletmints[msg.sender] ++;
+        _tokenIds ++;
         uint256 newItemId = _tokenIds;
 
-        _mint(recipient, newItemId);
+        _mint(msg.sender, newItemId);
         _setTokenURI(newItemId, tokenURI);
-
-        return newItemId;
+        
     }
-}
 
+
+
+
+
+}
