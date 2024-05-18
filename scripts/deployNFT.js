@@ -7,7 +7,7 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
 
-  const baseTokenURI = "ipfs://QmcdzPqCtVVP6Ap3HBf32HhEXMpJwgzneyayGaXc9Z6EKJ";
+  const baseTokenURI = "ipfs://QmQ1VX4UqoKFUmp5GpaUXeeprQoWCkhpU7DmixGiFmpBy2";
   const NFTMinter = await hre.ethers.getContractFactory("NFTMinter");
   const contract = await NFTMinter.deploy(baseTokenURI, deployer.address);
 

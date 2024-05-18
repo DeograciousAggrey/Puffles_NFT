@@ -674,7 +674,7 @@ const MintNFT = () => {
 
 
         const imageURI =
-          "ipfs://QmcdzPqCtVVP6Ap3HBf32HhEXMpJwgzneyayGaXc9Z6EKJ";
+          "ipfs://QmQ1VX4UqoKFUmp5GpaUXeeprQoWCkhpU7DmixGiFmpBy2";
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         await console.log(signer.getAddress());
@@ -696,7 +696,7 @@ const MintNFT = () => {
         // await transaction.wait();
 
 
-        const transaction = await contractNFT.mintNFT("ipfs://QmcdzPqCtVVP6Ap3HBf32HhEXMpJwgzneyayGaXc9Z6EKJ", overrides);
+        const transaction = await contractNFT.mintNFT("ipfs://QmQ1VX4UqoKFUmp5GpaUXeeprQoWCkhpU7DmixGiFmpBy2", overrides);
         await transaction.wait();
 
 

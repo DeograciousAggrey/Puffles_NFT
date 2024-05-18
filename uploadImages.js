@@ -29,5 +29,5 @@ async function uploadImage(filePath) {
     }
 }
 
-const imagePath = path.join(__dirname, 'images/2.png');
+const imagePath = path.join(__dirname, 'images/22.png');
 uploadImage(imagePath).then((hash) => console.log(`Image uploaded: ${hash}`));
