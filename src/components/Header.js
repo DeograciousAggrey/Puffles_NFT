@@ -83,7 +83,7 @@ const WalletHeader = () => {
                             {selectedAddress.slice(0, 6) + "..." + selectedAddress.slice(-4)}
                         </Text>
                         <Text style={{ color: 'white' }}>
-                            {balance.slice(0,5)} SHM
+                            {balance.slice(0,5)} ETH
                         </Text>
                     </div>
                     <Button type="primary" shape="circle" icon={<WalletOutlined />} onClick={() => setVisible(true)} />
@@ -101,8 +101,8 @@ const WalletHeader = () => {
             >
                 <Space direction="vertical">
                     <Text>Address: {selectedAddress}</Text>
-                    <Text>Balance: {balance} SHM</Text>
-                    <Button href="https://docs.shardeum.org/faucet/claim" target="_blank">Claim Testnet SHM</Button>
+                    <Text>Balance: {balance} ETH</Text>
+                    <Button href=" https://faucet.polygon.technology/" target="_blank">Claim Testnet Matic</Button>
                 </Space>
             </Modal>
         </Header>

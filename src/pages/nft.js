@@ -708,10 +708,10 @@ const MintNFT = () => {
             <span>
               Minting completed! Transaction hash:
               <Link
-                href={`https://explorer-sphinx.org/transaction/${transaction.hash}`}
+                href={`https://amoy.polygonscan.com/tx/${transaction.hash}`}
                 target="_blank"
               >
-                {`https://explorer-sphinx.org/transaction/${transaction.hash}`}
+                {`https://amoy.polygonscan.com/${transaction.hash}`}
               </Link>
             </span>
           ),
@@ -754,7 +754,7 @@ const MintNFT = () => {
             }}
           >
             <Text strong style={{ fontSize: "18px" }}>
-              Cost : 1 SHM
+              Cost : 0.01 ETH
             </Text>
           </div>
         </Card>
