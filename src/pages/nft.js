@@ -684,16 +684,23 @@ const MintNFT = () => {
           signer
         );
 
-        let overrides = {
+        const overrides = {
           value: ethers.utils.parseEther("0.01"), // Cost to mint: 1 SHM
           gasLimit: 3000000,
         };
-        const transaction = await contractNFT.mintNFT(
-          signer.getAddress(),
-          imageURI,
-          overrides
-        );
+        // const transaction = await contractNFT.mintNFT(
+        //   signer.getAddress(),
+        //   imageURI,
+        //   overrides
+        // );
+        // await transaction.wait();
+
+
+        const transaction = await contractNFT.mintNFT("ipfs://QmcdzPqCtVVP6Ap3HBf32HhEXMpJwgzneyayGaXc9Z6EKJ", overrides);
         await transaction.wait();
+
+
+
 
         notification.success({
           message: "Success",
@@ -701,10 +708,10 @@ const MintNFT = () => {
             <span>
               Minting completed! Transaction hash:
               <Link
-                href={`https://explorer-hackathon.sphinx.org/transaction/${transaction.hash}`}
+                href={`https://explorer-sphinx.org/transaction/${transaction.hash}`}
                 target="_blank"
               >
-                {`https://explorer-hackathon.sphinx.org/transaction/${transaction.hash}`}
+                {`https://explorer-sphinx.org/transaction/${transaction.hash}`}
               </Link>
             </span>
           ),
