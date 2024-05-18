@@ -2,7 +2,10 @@
 
 ![Homepage](/22.png)
 
-Welcome to Puffle Nft
+Welcome to Puffle Nft. An ERC721 smart contract with token supply 10, mint price 0.01 eth, token allowed per wallet 2, Token URI, Token symbol.
+
+The image is hosted on IPFS. The frontend is built using Nextjs and deployed to 
+[puffles-NFT](https://puffles-nft.vercel.app/)
 
 
 
